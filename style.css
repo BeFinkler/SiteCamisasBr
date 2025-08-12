@@ -166,6 +166,10 @@ body {
     margin-left: 0;
     margin-right: 0;
 }
+a{
+    text-decoration: none;
+    color: inherit; 
+}
 
 .btn-carrinho:hover {
     background: #222;
@@ -194,8 +198,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* tira o sublinhado */
-    color: inherit; /* mantém a cor do texto original */
+    text-decoration: none; 
+    color: inherit; 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -235,20 +239,7 @@ body {
     display: block;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .produtos, .categorias-lista {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .produto-card, .categoria-card {
-        width: 90%;
-        max-width: 320px;
-    }
-}
-
-/* Aside - aparência limpa e moderna */
+/* Aside*/
 .filtros-aside {
     position: fixed;
     top: 0;
@@ -428,6 +419,83 @@ body {
     font-size: 12px;
     color: #666;
     margin-top: 20px;
+}
+
+
+/* Página de produto detalhado */
+.produto-detalhe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.produto-card-detalhe {
+    background: #fff;
+    width: 700px;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.produto-card-detalhe img {
+    width: 300px;
+}
+
+.produto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produto-info h1 {
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+
+.produto-info h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.produto-tamanho-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.produto-tamanhos button {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    padding: 6px 12px;
+    margin-right: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.produto-preco-detalhe {
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.btn-comprar-detalhe {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.btn-comprar-detalhe:hover {
+    background: #222;
 }
 
 
