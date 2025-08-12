@@ -194,6 +194,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-decoration: none; /* tira o sublinhado */
+    color: inherit; /* mantém a cor do texto original */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
 }
 
 .categoria-card img {
@@ -240,40 +248,70 @@ body {
     }
 }
 
-/* Aside de filtros */
+/* Aside - aparência limpa e moderna */
 .filtros-aside {
     position: fixed;
     top: 0;
-    left: -320px; /* escondido */
+    left: -320px;
     width: 300px;
     height: 100vh;
     background: #fff;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    box-shadow: 2px 0 12px rgba(0,0,0,0.2);
     z-index: 2000;
     transition: left 0.3s ease;
     padding: 20px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.filtros-aside.ativo {
-    left: 0; /* aparece */
+#toggleAside:checked ~ .filtros-aside {
+    left: 0;
 }
 
-.filtros-conteudo h2 {
-    margin-bottom: 20px;
+/* Topo do aside */
+.filtros-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.filtros-topo h2 {
     font-size: 20px;
+    margin: 0;
 }
 
-.filtros-conteudo label {
-    display: block;
-    margin-top: 20px;
-    font-weight: 600;
+.btn-fechar {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.filtros-conteudo input[type="range"] {
+/* Inputs de faixa de preço/ano */
+.preco-inputs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.preco-inputs input {
     width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
+/* Seções internas */
+.filtros-conteudo label {
+    font-weight: 600;
+    margin-top: 16px;
+    display: block;
+}
+
+/* Cores */
 .cores {
     display: flex;
     gap: 8px;
@@ -288,6 +326,7 @@ body {
     cursor: pointer;
 }
 
+/* Tamanhos e marcas */
 .tamanhos, .marcas {
     display: flex;
     gap: 8px;
@@ -307,31 +346,90 @@ body {
     background: #ddd;
 }
 
-.limpar {
-    margin-top: 20px;
-    background: #f4f4f4;
+/* Rodapé do aside (botões de ação) */
+.filtros-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: auto;
+}
+
+.btn-aplicar {
+    background: #000;
+    color: #fff;
     border: none;
-    width: 100%;
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 14px;
 }
 
-/* Overlay */
-.overlay-aside {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 1500;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+.btn-aplicar:hover {
+    background: #222;
 }
 
-.overlay-aside.ativo {
-    opacity: 1;
-    pointer-events: auto;
+.btn-redefinir {
+    background: #f4f4f4;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
 }
+
+.btn-redefinir:hover {
+    background: #ddd;
+}
+
+
+.site-footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 900px;
+    max-height: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-socials {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.footer-socials a:hover {
+    color: #f0c14b;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    font-size: 12px;
+    color: #666;
+    margin-top: 20px;
+}
+
 
 
 

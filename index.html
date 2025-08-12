@@ -17,7 +17,8 @@
         <div class="header-top">
             <div class="header-left">
                 <img src="img/logo.png.png" alt="Logo 10" class="icon-logo">
-                <i class="fa-solid fa-bars icon-menu"></i>
+                <!-- Substitua o <i> pelo <label> para o menu -->
+                <label for="toggleAside" class="icon-menu fa-solid fa-bars"></label>
             </div>
 
             <div class="header-center">
@@ -47,54 +48,67 @@
                 <p class="produto-nome">Camisa Internacional<br>-2025-</p>
                 <img src="img/camisa_inter-removebg-preview.png" alt="Camisa Internacional 2025">
                 <p class="produto-preco">R$ 199,99</p>
-                <button class="btn-carrinho">Adicione ao carrinho</button>
+                <button class="btn-carrinho">Comprar</button>
             </div>
 
             <div class="produto-card">
                 <p class="produto-nome">Camisa Flamengo<br>-2025-</p>
                 <img src="img/camisaflamengo.png" alt="Camisa Flamengo 2025">
                 <p class="produto-preco">R$ 199,99</p>
-                <button class="btn-carrinho">Adicione ao carrinho</button>
+                <button class="btn-carrinho">Comprar</button>
             </div>
         </div>
     </section>
 
-    <section class="categorias">
-        <h2 class="section-title">Categorias</h2>
-        <div class="categorias-lista">
-            <div class="categoria-card">
-                <div class="categoria-img">
-                    <img src="img/logoretro.png" alt="Categoria retrô">
-                </div>
-                <p>retrô</p>
+<section class="categorias">
+    <h2 class="section-title">Categorias</h2>
+    <div class="categorias-lista">
+        <a href="#retro" class="categoria-card">
+            <div class="categoria-img">
+                <img src="img/logoretro.png" alt="Categoria retrô">
             </div>
-            <div class="categoria-card">
-                <div class="categoria-img">
-                    <img src="img/cbf-logo-selecao-logo-brasil-2-removebg-preview.png" alt="Categoria seleção">
-                </div>
-                <p>seleção</p>
+            <p>retrô</p>
+        </a>
+        <a href="#selecao" class="categoria-card">
+            <div class="categoria-img">
+                <img src="img/cbf-logo-selecao-logo-brasil-2-removebg-preview.png" alt="Categoria seleção">
             </div>
-            <div class="categoria-card">
-                <div class="categoria-img">
-                    <img src="img/logobraisleirao.png" alt="Categoria clubes">
-                </div>
-                <p>clubes</p>
+            <p>seleção</p>
+        </a>
+        <a href="#clubes" class="categoria-card">
+            <div class="categoria-img">
+                <img src="img/logobraisleirao.png" alt="Categoria clubes">
             </div>
-        </div>
-    </section>
+            <p>clubes</p>
+        </a>
+    </div>
+</section>
 
-    <!-- Aside - Filtros -->
-<aside id="filtrosAside" class="filtros-aside">
-    <div class="filtros-conteudo">
+
+<!-- Botão de abrir aside -->
+<input type="checkbox" id="toggleAside" hidden>
+
+<!-- Aside de filtros -->
+<aside class="filtros-aside">
+    <div class="filtros-topo">
         <h2>Filtros</h2>
+        <label for="toggleAside" class="btn-fechar">&times;</label>
+    </div>
 
-      <label>Preço</label>
-<p id="precoValor">R$ 250</p>
-<input type="range" min="0" max="500" value="250" id="precoRange">
+    <div class="filtros-conteudo">
+        <label>Preço</label>
+        <div class="preco-inputs">
+            <input type="number" placeholder="Mínimo" min="0">
+            <span>-</span>
+            <input type="number" placeholder="Máximo" min="0">
+        </div>
 
-<label>Ano</label>
-<p id="anoValor">2023</p>
-<input type="range" min="2000" max="2025" value="2023" id="anoRange">
+        <label>Ano</label>
+        <div class="preco-inputs">
+            <input type="number" placeholder="De" min="1900" max="2025">
+            <span>-</span>
+            <input type="number" placeholder="Até" min="1900" max="2025">
+        </div>
 
         <label>Cor</label>
         <div class="cores">
@@ -120,73 +134,33 @@
             <button>Puma</button><button>Nike</button><button>Adidas</button>
             <button>Umbro</button><button>Reebok</button>
         </div>
+    </div>
 
-        <button class="limpar">Limpar filtros</button>
+    <div class="filtros-footer">
+        <button class="btn-aplicar">Aplicar filtros</button>
+        <button class="btn-redefinir">Redefinir filtros</button>
     </div>
 </aside>
 
-<!-- Overlay para fechar ao clicar fora -->
-<div id="overlayAside" class="overlay-aside"></div>
+<!-- Footer agora está fora do aside -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="img/logo.png.png" alt="Logo 10" />
+            <p>a camisa que veste o craque</p>
+        </div>
+        <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Site 10 e Faixa — Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
 
-
-</main>
-
-
-
-<script>
-/* ===== elementos ===== */
-const btnMenu = document.querySelector('.icon-menu');   // botão hamburger
-const asideFiltros = document.getElementById('filtrosAside');
-const overlay = document.getElementById('overlayAside');
-
-const precoRange = document.getElementById('precoRange');
-const precoValor = document.getElementById('precoValor');
-const anoRange = document.getElementById('anoRange');
-const anoValor = document.getElementById('anoValor');
-
-/* ===== abrir / fechar aside ===== */
-function openAside() {
-  asideFiltros.classList.add('ativo');
-  overlay.classList.add('ativo');
-  asideFiltros.setAttribute('aria-hidden', 'false');
-  btnMenu.setAttribute('aria-expanded', 'true');
-  
-}
-function closeAside() {
-  asideFiltros.classList.remove('ativo');
-  overlay.classList.remove('ativo');
-  asideFiltros.setAttribute('aria-hidden', 'true');
-  btnMenu.setAttribute('aria-expanded', 'false');
-  btnMenu.focus();
-}
-
-btnMenu.addEventListener('click', openAside);
-overlay.addEventListener('click', closeAside);
-
-
-/* ===== atualizar sliders (valor + preenchimento visual do track) ===== */
-// formata e atualiza label
-function updateRangeUI(rangeEl, outputEl, opts = {}) {
-  const v = Number(rangeEl.value);
-  // formatar label
-  if (opts.format === 'currency') {
-    // R$ 250,00 (local pt-BR)
-    outputEl.textContent = new Intl.NumberFormat('pt-BR', {
-      style: 'currency', currency: 'BRL'
-    }).format(v);
-  } else {
-    outputEl.textContent = v;
-  }
-}
-
-// iniciar com valores atuais
-updateRangeUI(precoRange, precoValor, { format: 'currency' });
-updateRangeUI(anoRange, anoValor);
-
-// atualizar em tempo real enquanto move (evento 'input' dispara sempre que o slider muda)
-precoRange.addEventListener('input', () => updateRangeUI(precoRange, precoValor, { format: 'currency' }));
-anoRange.addEventListener('input', () => updateRangeUI(anoRange, anoValor));
-</script>
 
 
 
