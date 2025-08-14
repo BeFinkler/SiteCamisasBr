@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produto</title>
+    <title>Site 10 e Faixa</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
+
 </head>
 
 <body>
+
     <header class="site-header">
         <div class="header-top">
             <div class="header-left">
@@ -37,32 +39,41 @@
         </div>
     </header>
 
+
     <main class="page-content">
-        <section class="produto-detalhe">
-            <div class="produto-card-detalhe">
-                <img src="img/camisa_inter-removebg-preview.png" alt="Camisa Internacional 2025" class="produto-imagem">
+        <section class="carrinho-container">
+            <h1>Seu carrinho</h1>
 
-                <div class="produto-info">
-                    <h1>Camisa Internacional</h1>
-                    <h2>-2025-</h2>
-
-                    <p class="produto-tamanho-label">TAMANHO</p>
-                    <div class="produto-tamanhos">
-                        <button>P</button>
-                        <button>M</button>
-                        <button>G</button>
-                        <button>GG</button>
-                    </div>
-
-                    <div class="produto-preco-detalhe">
-                        <span>R$ 199,99</span>
-                    </div>
-
-                    <a href="carrinho.html" class="btn-comprar-detalhe">COMPRAR</a>
+            <div class="carrinho-item">
+                <img src="img/camisa_inter-removebg-preview.png" alt="Camisa Internacional 2025">
+                <div class="item-info">
+                    <p class="item-nome">Camisa Internacional 2025</p>
+                    <p>Tamanho: M</p>
+                    <p>Quantidade:
+                        <button>-</button>
+                        <span>2</span>
+                        <button>+</button>
+                    </p>
                 </div>
+                <div class="item-preco">R$ 399,98</div>
+            </div>
+
+            <div class="carrinho-resumo">
+                <h2>Resumo do pedido</h2>
+                <div class="resumo-grid">
+                    <span>Subtotal</span>
+                    <span>R$ 399,98</span>
+                    <span>Entrega</span>
+                    <span>Grátis</span>
+                    <strong>Valor final</strong>
+                    <strong>R$ 399,98</strong>
+                </div>
+                <a href="finalizar.html" class="btn-finalizar">Finalizar pedido</a>
             </div>
         </section>
     </main>
+
+
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -84,6 +95,5 @@
             </div>
         </div>
     </footer>
-</body>
 
-</html>
+</body>
