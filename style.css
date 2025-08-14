@@ -640,7 +640,37 @@ a {
     cursor: pointer;
 }
 
+/*confirmacao pedido*/
 
+.pedido-feito {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-rastreio {
+    background: black;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-rastreio:hover {
+    background: #222;
+}
+
+.icon-check {
+    font-size: 250px;
+}
 
 
 
