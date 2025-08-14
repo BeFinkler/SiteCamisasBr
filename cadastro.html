@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
+
 </head>
 
 <body>
@@ -38,16 +39,30 @@
         </div>
     </header>
 
-    <main class="page-content">
-        <div class="pedido-feito">
-            <h1>Pagamento confirmado</h1>
-            <i class="fa-solid fa-circle-check icon-check"></i>
-            <h2>Obrigado pela preferência</h2>
-            <a class="btn-rastreio" href="rastreio.html">Rastrear pedido</a>
+        <div class="card-cadastro">
+            <h2> Novo aqui? <br> <span>Faça seu cadastro abaixo</span></h2>
+
+            <form action="cadastro.html" method="post">
+                <div class="form-row">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="Celular" required>
+                    <input type="password" placeholder="Crie uma senha" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="CPF" required>
+                    <input type="password" placeholder="Confirme a senha" required>
+                </div>
+
+                <button type="submit" class="btn-cadastrar">Cadastrar-se</button>
+            </form>
+
+            <p class="login-text">
+                Já tem uma conta? <a href="login.html" class="link-login">Faça <em>login</em></a>
+            </p>
         </div>
-    </main>
-
-
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -69,6 +84,9 @@
             </div>
         </div>
     </footer>
+
+
+
 
 </body>
 
