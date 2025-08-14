@@ -793,48 +793,202 @@ a {
     text-decoration: underline;
 }
 
+/*Rastreio*/
+.rastreio-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 150px auto 150px auto;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.rastreio-card h2 a {
+    color: #000;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: underline;
+}
+
+.rastreio-card h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.status-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress {
+    width: 25%;
+    height: 100%;
+    background-color: #000;
+}
+
+.rastreio-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+
 
 
 
 
 /* Responsividade para tablets */
+/* Tablets (até 900px) */
 @media (max-width: 900px) {
     .header-top {
+        flex-wrap: wrap;
         height: auto;
         padding: 8px 16px;
         gap: 8px;
     }
 
+    .header-left,
+    .header-right {
+        gap: 12px;
+    }
+
+    .header-center {
+        order: 3;
+        width: 100%;
+        margin-top: 8px;
+    }
+
     .search-wrapper {
         width: 100%;
-        max-width: 300px;
+        max-width: 500px;
         height: 36px;
     }
 
     .icon-logo {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
 
     .icon-menu,
     .icon-cart,
-    .icon-user,
-    .icon-search {
-        font-size: 20px;
+    .icon-user {
+        font-size: 24px;
+    }
+
+    /* Produtos e categorias mais flexíveis */
+    .produtos,
+    .categorias-lista {
+        gap: 20px;
+    }
+
+    .produto-card {
+        width: 240px;
+    }
+
+    .categoria-card {
+        width: 150px;
+        padding: 16px;
     }
 }
 
-/* Responsividade para celulares */
+/* Celulares médios (até 600px) */
 @media (max-width: 600px) {
     .header-top {
         padding: 4px 8px;
-        gap: 4px;
+    }
+
+    .header-left,
+    .header-right {
+        gap: 8px;
     }
 
     .search-wrapper {
+        max-width: 200px;
+        height: 32px;
+    }
+
+    .icon-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .icon-menu,
+    .icon-cart,
+    .icon-user {
+        font-size: 18px;
+    }
+
+    .header-slogan {
+        font-size: 12px;
+        letter-spacing: 1px;
+        height: auto;
+        padding: 4px 0;
+    }
+
+    .produto-card,
+    .categoria-card {
         width: 100%;
-        max-width: 160px;
-        height: 28px;
+        max-width: 300px;
+    }
+
+    .produto-card-detalhe {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .produto-card-detalhe img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .carrinho-container,
+    .finalizar-pedido,
+    .pedido-feito,
+    .card-cadastro,
+    .card-login,
+    .rastreio-card {
+        margin: 120px auto 80px auto;
+        padding: 20px;
+        width: 95%;
+    }
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-footer {
+        margin-top: auto; /* empurra o footer pro final */
+        width: 100%;
+        padding: 40px 0 20px 0;
+        background: #111;
+    }
+
+    .footer-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
+}
+
+
+/* Celulares pequenos (até 400px) */
+@media (max-width: 400px) {
+    .search-wrapper {
+        max-width: 140px;
     }
 
     .icon-logo {
@@ -844,20 +998,24 @@ a {
 
     .icon-menu,
     .icon-cart,
-    .icon-user,
-    .icon-search {
+    .icon-user {
+        font-size: 16px;
+    }
+
+    /* Reduz ainda mais fontes e espaçamentos */
+    .section-title {
+        font-size: 18px;
+        padding: 4px 12px;
+    }
+
+    .produto-preco {
+        font-size: 16px;
+    }
+
+    .btn-carrinho,
+    .btn-finalizar,
+    .btn-comprar-detalhe {
         font-size: 14px;
+        padding: 8px 12px;
     }
-
-    .header-slogan {
-        font-size: 12px;
-        letter-spacing: 1px;
-        height: 18px;
-        line-height: 18px;
-    }
-}
-
-
-.page-content {
-    padding-top: 96px;
 }
